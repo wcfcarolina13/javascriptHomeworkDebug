@@ -42,12 +42,16 @@ function game(player_count, enemy_count) {
 		  		player_count += 1;
 		  	} else if (enemy == "scissors" ) {
 		 		console.log("Tie");
-		 	}
+		 	} else {
+				console.log("incorrect input")
+				return;
+			}
 		}
 	} while (player_count != 5 || enemy_count != 5);
 	console.log(`Player Score: ${player_count}`);
 	console.log(`Computer Score: ${enemy_count}`);
 	console.log(`Games Played: ${game_counter}`);
+	return;
 }
 
 // game(enemy_count, player_count, enemyArray);
