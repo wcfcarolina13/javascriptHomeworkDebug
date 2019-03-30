@@ -1,8 +1,6 @@
 // Rock paper scissors
 
 // Computer's choice method
-let player_count = 0;
-let enemy_count = 0;
 
 function game(player_count, enemy_count) {
 	let enemyArray = ["rock", "paper", "scissors"];
@@ -11,7 +9,7 @@ function game(player_count, enemy_count) {
 		let choice = prompt("Rock, paper, or scissors?");
 		let enemy = enemyArray[Math.floor(Math.random() * enemyArray.length)];
 		console.log(`${enemy}`);
-		// let enemy = document.getElementById('result');
+		// let document.getElementById('result').innerHTML = enemy;
 		game_counter += 1;
 		if (choice == "rock") {
 			if (enemy == "rock") {
@@ -42,16 +40,19 @@ function game(player_count, enemy_count) {
 		  		player_count += 1;
 		  	} else if (enemy == "scissors" ) {
 		 		console.log("Tie");
-		 	} else {
-				console.log("incorrect input")
-				return;
-			}
+		 	}
+		} else {
+			console.log("incorrect input")
+			return;
 		}
-	} while (player_count != 5 || enemy_count != 5);
+		console.log(`${game_counter}`);
+	} while (player_count <= 5 || enemy_count <= 5);
 	console.log(`Player Score: ${player_count}`);
 	console.log(`Computer Score: ${enemy_count}`);
 	console.log(`Games Played: ${game_counter}`);
+	player_count = 0;
+	enemy_count = 0;
 	return;
-}
 
-// game(enemy_count, player_count, enemyArray);
+}
+// game(enemy_count, player_count);
